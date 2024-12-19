@@ -1,13 +1,18 @@
 /**
  * @file
  * @brief Play Presentation
+ * Turns a folder of videos into a presentation
  *
  * @author [iaian7](https://vuo.org/user/127)
  * @version 1.0
  * @createdInVuoVersion 2.4.5
  * @lastSavedInVuoVersion 2.4.5
- * @copyright Copyright © 2024 [jeinselen](https://vuo.org/user/127)
- * @image icon 05x05=aaaaa-afcca-afdda-afaaa-aaaaa.png
+ * @keywords presentation, video, slideshow
+ * @copyright Copyright © 2024 [John Einselen](https://vuo.org/user/127)
+ * @image icon Play Presentation.png
+ * @url homepage https://github.com/jeinselen/Vuo-PlayPresentation
+ * @url documentation https://github.com/jeinselen/Vuo-PlayPresentation
+ * @bundle com.jeinselen.playPresentation
  * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
  */
 
