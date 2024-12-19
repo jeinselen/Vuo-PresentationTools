@@ -1,0 +1,93 @@
+/**
+ * @file
+ * @brief Play Presentation
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @version 1.0
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2024 [jeinselen](https://vuo.org/user/127)
+ * @image icon ../../../../../Downloads/05x05=aaaaa-afcca-afdda-afaaa-aaaaa.png
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+ChangeMouseCursor [type="vuo.window.cursor2" version="2.0.0" label="Change Mouse Cursor|<refresh>refresh\l|<windowDescription>windowDescription\l|<cursor>cursor\l|<changedWindowDescription>changedWindowDescription\r" pos="990,570" fillcolor="blue" _cursor="\"none\""];
+ChangeWindowPosition [type="vuo.window.position2" version="2.0.0" label="Change Window Position|<refresh>refresh\l|<windowDescription>windowDescription\l|<topLeft>topLeft\l|<unit>unit\l|<changedWindowDescription>changedWindowDescription\r" pos="735,570" fillcolor="blue" _topLeft="\{\"x\":0,\"y\":0\}" _unit="\"points\""];
+ChangeWindowScreen [type="vuo.window.fullscreen2" version="2.0.0" label="Change Window Screen|<refresh>refresh\l|<windowDescription>windowDescription\l|<fullscreen>fullscreen\l|<screen>screen\l|<changedWindowDescription>changedWindowDescription\r" pos="735,660" fillcolor="blue" _fullscreen="true" _screen="\{\"type\":\"active\"\}"];
+ChangeWindowTitle [type="vuo.window.title2" version="2.0.0" label="Change Window Title|<refresh>refresh\l|<windowDescription>windowDescription\l|<title>title\l|<changedWindowDescription>changedWindowDescription\r" pos="1230,570" fillcolor="blue" _title="\"\""];
+CompareTexts2 [type="vuo.text.compare" version="1.1.0" label="Loop|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1035,330" fillcolor="magenta" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}" _b="\"loop\""];
+ConvertFrameToImage [type="vuo.type.videoframe.image" version="1.0.0" label="Convert Frame to Image|<refresh>refresh\l|<frame>frame\l|<image>image\r" pos="1095,420"];
+CycleThroughList [type="vuo.list.cycle2.VuoText" version="2.0.1" label="Cycle through List|<refresh>refresh\l|<goForward>goForward\l|<goBackward>goBackward\l|<goToFirst>goToFirst\l|<list>list\l|<wrapMode>wrapMode\l|<item>item\r|<position>position\r" pos="450,150" fillcolor="tangerine" _wrapMode="\"saturate\""];
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<started>started\r" pos="0,180" fillcolor="yellow" _started_eventThrottling="enqueue"];
+GetDragValues [type="vuo.ui.get.drag" version="1.0.0" label="Get Drag Values|<refresh>refresh\l|<drag>drag\l|<position>position\r|<urls>urls\r" pos="240,30"];
+GetFileURLValues [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="525,30"];
+GetFirstItemInList [type="vuo.list.get.first.VuoText" version="1.0.0" label="Get First Item in List|<refresh>refresh\l|<list>list\l|<firstItem>firstItem\r" pos="405,45"];
+GetMovieInfo [type="vuo.video.info" version="2.0.2" label="Get Movie Info|<refresh>refresh\l|<url>url\l|<duration>duration\r" pos="720,195" fillcolor="tangerine"];
+ListFiles [type="vuo.file.list" version="1.0.2" label="List Files|<refresh>refresh\l|<folder>folder\l|<includeSubfolders>includeSubfolders\l|<fileType>fileType\l|<files>files\r" pos="240,150" fillcolor="tangerine" _includeSubfolders="false" _fileType="\"movie\""];
+LockWindowAspectRatio [type="vuo.window.aspectRatio2" version="2.0.0" label="Lock Window Aspect Ratio|<refresh>refresh\l|<windowDescription>windowDescription\l|<width>width\l|<height>height\l|<changedWindowDescription>changedWindowDescription\r" pos="480,570" fillcolor="blue" _width="16.0" _height="9.0"];
+Loop2 [type="vuo.text.compare" version="1.1.0" label="Loop|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1035,450" fillcolor="cyan" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}" _b="\"next\""];
+Play2 [type="vuo.event.share" version="1.0.0" label="Backward|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="450,330" fillcolor="magenta"];
+PlayMovie [type="vuo.video.play" version="2.1.0" label="Play Movie|<refresh>refresh\l|<play>play\l|<pause>pause\l|<setTime>setTime\l|<url>url\l|<loop>loop\l|<playbackRate>playbackRate\l|<optimization>optimization\l|<decodedVideo>decodedVideo\r|<decodedAudio>decodedAudio\r|<finishedPlayback>finishedPlayback\r" pos="1200,150" fillcolor="orange" _loop="\"none\"" _playbackRate="1.0" _optimization="\"auto\"" _decodedVideo_eventThrottling="drop" _decodedAudio_eventThrottling="enqueue" _finishedPlayback_eventThrottling="enqueue"];
+ReceiveFileDrags [type="vuo.ui.drag.file2" version="2.0.0" label="Receive File Drags|<refresh>refresh\l|<window>window\l|<dragEntered>dragEntered\r|<dragMovedTo>dragMovedTo\r|<dragCompleted>dragCompleted\r|<dragExited>dragExited\r" pos="30,30" _dragEntered_eventThrottling="enqueue" _dragMovedTo_eventThrottling="enqueue" _dragCompleted_eventThrottling="enqueue" _dragExited_eventThrottling="enqueue"];
+ReceiveKeyboardButtons [type="vuo.keyboard.button2" version="2.0.0" label="Forward|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="225,240" fillcolor="violet" _key="\"RightArrow\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+ReceiveKeyboardButtons2 [type="vuo.keyboard.button2" version="2.0.0" label="Backward|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="225,450" fillcolor="violet" _key="\"LeftArrow\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+ReceiveKeyboardButtons3 [type="vuo.keyboard.button2" version="2.0.0" label="Reset|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="225,345" fillcolor="violet" _key="\"Space\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+RenderImageToWindow [type="vuo.image.render.window2" version="4.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<setWindowDescription>setWindowDescription\l|<updatedWindow>updatedWindow\r" pos="1515,150" fillcolor="blue" _updatedWindow_eventThrottling="enqueue"];
+SelectEventInput [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1230,450" fillcolor="cyan"];
+SelectEventInput2 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1230,330" fillcolor="magenta"];
+SelectInput [type="vuo.select.in.boolean.VuoReal" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1020,180" fillcolor="tangerine"];
+ShareEvent [type="vuo.event.share" version="1.0.0" label="Forward|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="450,270" fillcolor="cyan"];
+SpinOffValue [type="vuo.event.spinOffValue.VuoText" version="1.0.0" label="Spin Off Value|<refresh>refresh\l|<value>value\l|<spunOff>spunOff\r" pos="855,450" fillcolor="cyan" _spunOff_eventThrottling="enqueue"];
+Subtract [type="vuo.math.subtract.VuoReal" version="1.2.0" label="Subtract|<refresh>refresh\l|<a>a\l|<b>b\l|<difference>difference\r" pos="870,195" fillcolor="tangerine" _b="0.01"];
+Switch [type="vuo.logic.switch" version="1.0.0" label="Switch|<refresh>refresh\l|<toggle>toggle\l|<turnOn>turnOn\l|<turnOff>turnOff\l|<value>value\r" pos="570,270" fillcolor="cyan"];
+
+ChangeMouseCursor:changedWindowDescription -> ChangeWindowTitle:windowDescription;
+ChangeWindowPosition:changedWindowDescription -> ChangeMouseCursor:windowDescription;
+ChangeWindowTitle:changedWindowDescription -> RenderImageToWindow:setWindowDescription;
+CompareTexts2:result -> SelectEventInput2:which;
+ConvertFrameToImage:image -> RenderImageToWindow:image;
+CycleThroughList:item -> CompareTexts2:a;
+CycleThroughList:item -> GetMovieInfo:url;
+CycleThroughList:item -> PlayMovie:url;
+CycleThroughList:item -> SpinOffValue:value;
+FireOnStart:started -> CycleThroughList:goToFirst;
+FireOnStart:started -> ListFiles:folder;
+FireOnStart:started -> LockWindowAspectRatio:windowDescription;
+FireOnStart:started -> ShareEvent:event;
+GetDragValues:urls -> GetFirstItemInList:list;
+GetFileURLValues:folder -> ListFiles:folder;
+GetFirstItemInList:firstItem -> GetFileURLValues:url;
+GetMovieInfo:duration -> Subtract:a;
+ListFiles:files -> CycleThroughList:list;
+LockWindowAspectRatio:changedWindowDescription -> ChangeWindowPosition:windowDescription;
+LockWindowAspectRatio:changedWindowDescription -> ChangeWindowScreen:windowDescription;
+Loop2:result -> SelectEventInput:which;
+Play2:sameEvent -> Switch:turnOff;
+PlayMovie:decodedVideo -> ConvertFrameToImage:frame;
+PlayMovie:finishedPlayback -> SelectEventInput2:trueOption;
+PlayMovie:finishedPlayback -> SelectEventInput:trueOption;
+ReceiveFileDrags:dragCompleted -> GetDragValues:drag;
+ReceiveKeyboardButtons2:pressed -> CycleThroughList:goBackward;
+ReceiveKeyboardButtons2:pressed -> ListFiles:folder;
+ReceiveKeyboardButtons2:pressed -> Play2:event;
+ReceiveKeyboardButtons3:pressed -> CycleThroughList:goToFirst;
+ReceiveKeyboardButtons3:pressed -> ShareEvent:event;
+ReceiveKeyboardButtons:pressed -> CycleThroughList:goForward;
+ReceiveKeyboardButtons:pressed -> ShareEvent:event;
+RenderImageToWindow:updatedWindow -> ReceiveFileDrags:window [style=invis];
+RenderImageToWindow:updatedWindow -> ReceiveKeyboardButtons2:window [style=invis];
+RenderImageToWindow:updatedWindow -> ReceiveKeyboardButtons3:window [style=invis];
+RenderImageToWindow:updatedWindow -> ReceiveKeyboardButtons:window [style=invis];
+SelectEventInput2:out -> PlayMovie:play;
+SelectEventInput2:out -> SelectInput:which;
+SelectEventInput:out -> CycleThroughList:goForward;
+SelectEventInput:out -> PlayMovie:play;
+SelectInput:out -> PlayMovie:setTime;
+ShareEvent:sameEvent -> PlayMovie:play;
+ShareEvent:sameEvent -> Switch:turnOn;
+SpinOffValue:spunOff -> Loop2:a;
+Subtract:difference -> SelectInput:falseOption;
+Switch:value -> SelectInput:which;
+}
