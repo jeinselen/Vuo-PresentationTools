@@ -1,0 +1,149 @@
+/**
+ * @file
+ * @brief Patch Layer
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2024 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+AdjustLoudness [type="vuo.audio.loudness" version="2.0.0" label="Adjust Loudness|<refresh>refresh\l|<samples>samples\l|<loudness>loudness\l|<adjustedSamples>adjustedSamples\r" pos="3060,510" fillcolor="yellow"];
+AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="1185,570" _includeEmptyParts="true"];
+BecameGreaterThan [type="vuo.data.becameGreaterThan.VuoReal" version="1.0.0" label="Became Greater Than|<refresh>refresh\l|<a>a\l|<b>b\l|<becameGreaterThan>becameGreaterThan\r" pos="2910,795" fillcolor="orange" _b="1.0"];
+BlendColors [type="vuo.color.blend" version="1.0.0" label="Blend Colors|<refresh>refresh\l|<background>background\l|<foreground>foreground\l|<blendMode>blendMode\l|<foregroundOpacity>foregroundOpacity\l|<blendedColor>blendedColor\r" pos="2820,0" _blendMode="\"normal\""];
+BlendColors2 [type="vuo.color.blend" version="1.0.0" label="Blend Colors|<refresh>refresh\l|<background>background\l|<foreground>foreground\l|<blendMode>blendMode\l|<foregroundOpacity>foregroundOpacity\l|<blendedColor>blendedColor\r" pos="2820,180" _blendMode="\"normal\""];
+CombineLayers [type="vuo.layer.combine.group" version="1.0.0" label="Combine Layers|<refresh>refresh\l|<layers>layers\l|<combinedLayer>combinedLayer\r" pos="3255,165"];
+ConvertBooleanToReal [type="vuo.type.boolean.real" version="1.0.0" label="Convert Boolean to Real|<refresh>refresh\l|<boolean>boolean\l|<real>real\r" pos="1365,405"];
+ConvertTextToInteger [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1965,345"];
+ConvertTextToInteger3 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1920,435"];
+ConvertTextToReal2 [type="vuo.type.text.real" version="1.0.1" label="Convert Text to Real|<refresh>refresh\l|<text>text\l|<real>real\r" pos="2160,840"];
+Curve [type="vuo.motion.curve.VuoReal" version="2.0.1" label="Curve|<refresh>refresh\l|<time>time\l|<startPosition>startPosition\l|<endPosition>endPosition\l|<duration>duration\l|<curve>curve\l|<easing>easing\l|<loop>loop\l|<phase>phase\l|<value>value\r" pos="2910,630" fillcolor="orange" _startPosition="1.0" _endPosition="0.0" _curve="\"quadratic\"" _easing="\"in+out\"" _loop="\"none\"" _phase="0.0"];
+FilterNote2 [type="vuo.midi.filter.note" version="2.0.0" label="Filter Note|<refresh>refresh\l|<note>note\l|<channel>channel\l|<noteNumber>noteNumber\l|<velocity>velocity\r" pos="1875,525"];
+FindTableRow [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="1440,540" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
+FireOnDisplayRefresh [type="vuo.event.fireOnDisplayRefresh" version="1.0.0" label="Fire on Display Refresh|<refresh>refresh\l|<requestedFrame>requestedFrame\r" pos="2505,630" fillcolor="orange" _requestedFrame_eventThrottling="drop"];
+GetFileURLValues [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="1485,330" fillcolor="magenta"];
+GetItemFromList [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1305,330" fillcolor="magenta"];
+GetItemFromList2 [type="vuo.list.get.VuoText" version="1.0.1" label="Title String|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1860,360" _which="2"];
+GetItemFromList3 [type="vuo.list.get.VuoText" version="1.0.1" label="Fade Length|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1860,435" fillcolor="orange" _which="3"];
+GetItemFromList4 [type="vuo.list.get.VuoText" version="1.0.1" label="Color HEX|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1860,285" _which="4"];
+GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1605,540" _which="2"];
+GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="1605,615" _which="3"];
+GetRGBColorValues [type="vuo.color.get.rgb" version="2.0.0" label="Get RGB Color Values|<refresh>refresh\l|<color>color\l|<red>red\r|<green>green\r|<blue>blue\r|<opacity>opacity\r" pos="2340,105"];
+MakeHexColor [type="vuo.color.make.hex" version="1.0.0" label="Make Hex Color|<refresh>refresh\l|<hexCode>hexCode\l|<color>color\r" pos="2175,105"];
+MakeList [type="vuo.list.make.3.VuoLayer" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<list>list\r" pos="3222,176"];
+MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="1126,581" _1="\"patch\""];
+MakeList3 [type="vuo.list.make.2.VuoReal" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="2562,326"];
+MakeRGBColor [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,0" _opacity="0.20000000000000001"];
+MakeRGBColor2 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,105" _opacity="0.40000000000000002"];
+MakeRGBColor3 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,210" _opacity="0.80000000000000004"];
+MakeRectangleLayer [type="vuo.layer.make.rect" version="1.0.0" label="Make Rectangle Layer|<refresh>refresh\l|<color>color\l|<anchor>anchor\l|<center>center\l|<rotation>rotation\l|<width>width\l|<height>height\l|<sharpness>sharpness\l|<roundness>roundness\l|<opacity>opacity\l|<layer>layer\r" pos="3030,0" _anchor="\{\"horizontalAlignment\":\"center\",\"verticalAlignment\":\"center\"\}" _center="\{\"x\":0.0,\"y\":0.0\}" _rotation="0.0" _sharpness="0.0" _roundness="0.10000000000000001" _opacity="1.0"];
+MakeRectangleLayer2 [type="vuo.layer.make.rect" version="1.0.0" label="Make Rectangle Layer|<refresh>refresh\l|<color>color\l|<anchor>anchor\l|<center>center\l|<rotation>rotation\l|<width>width\l|<height>height\l|<sharpness>sharpness\l|<roundness>roundness\l|<opacity>opacity\l|<layer>layer\r" pos="3030,180" _anchor="\{\"horizontalAlignment\":\"center\",\"verticalAlignment\":\"center\"\}" _center="\{\"x\":0.0,\"y\":0.0\}" _rotation="0.0" _sharpness="1.0" _roundness="0.10000000000000001" _opacity="1.0"];
+MakeTextLayer [type="vuo.layer.make.text2" version="2.0.0" label="Make Text Layer|<refresh>refresh\l|<text>text\l|<font>font\l|<anchor>anchor\l|<center>center\l|<rotation>rotation\l|<wrapWidth>wrapWidth\l|<opacity>opacity\l|<layer>layer\r" pos="3060,360" _font="\{\"fontName\":\"AvenirNext-Regular\",\"pointSize\":14.0,\"underline\":false,\"color\":\{\"r\":1.0,\"g\":0.99999994039535522,\"b\":1.0,\"a\":1.0\},\"alignment\":\"left\",\"characterSpacing\":1.0,\"lineSpacing\":1.0\}" _anchor="\{\"horizontalAlignment\":\"center\",\"verticalAlignment\":\"center\"\}" _center="\{\"x\":0.0,\"y\":0.0\}" _opacity="1.0"];
+MeasureTime [type="vuo.time.measureTime" version="2.0.1" label="Measure Time|<refresh>refresh\l|<time>time\l|<start>start\l|<pause>pause\l|<reset>reset\l|<elapsedTime>elapsedTime\r" pos="2685,630" fillcolor="orange"];
+Multiply [type="vuo.math.multiply.VuoReal" version="2.1.1" label="Multiply|<refresh>refresh\l|<values>values\l|<product>product\r" pos="2595,315"];
+PlayAudioFile [type="vuo.audio.file.play" version="1.2.0" label="Play Audio File|<refresh>refresh\l|<play>play\l|<pause>pause\l|<setTime>setTime\l|<url>url\l|<loop>loop\l|<decodedChannels>decodedChannels\r|<finishedPlayback>finishedPlayback\r" pos="2685,510" fillcolor="yellow" _setTime="\"\"" _loop="\"none\"" _decodedChannels_eventThrottling="enqueue" _finishedPlayback_eventThrottling="enqueue"];
+PlayStatus2 [type="vuo.data.share.VuoBoolean" version="1.0.0" label="Play Status|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2175,510" fillcolor="blue"];
+PlayStatus3 [type="vuo.data.share.VuoReal" version="1.0.0" label="Fade Status|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2355,375" fillcolor="orange"];
+SelectEventInput [type="vuo.select.in.boolean.event2" version="3.0.0" label="Play Event|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2310,510" fillcolor="green"];
+SelectEventInput3 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Fade Event|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2310,600" fillcolor="orange"];
+ShareEvent [type="vuo.event.share" version="1.0.0" label="Trigger Event|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="2025,525" fillcolor="yellow"];
+ShareValue [type="vuo.data.share.VuoBoolean" version="1.0.0" label="Play Status|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2355,315" fillcolor="blue"];
+ShareValue2 [type="vuo.data.share.VuoReal" version="1.0.0" label="Share Value|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2775,315"];
+SplitText [type="vuo.text.split.VuoText" version="1.0.0" label="Split Text|<refresh>refresh\l|<text>text\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<splitTexts>splitTexts\r" pos="1680,360" fillcolor="magenta" _separator="\"-\"" _includeEmptyParts="true"];
+StopTrigger2 [type="vuo.event.share" version="1.0.0" label="Stop Event|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="2370,690" fillcolor="magenta"];
+SummarizeValue3 [type="vuo.data.summarize.VuoInteger" version="1.0.1" label="Summarize Value|<refresh>refresh\l|<value>value\l|<summary>summary\r" pos="1215,465"];
+Switch [type="vuo.logic.switch" version="1.0.0" label="Play Status|<refresh>refresh\l|<toggle>toggle\l|<turnOn>turnOn\l|<turnOff>turnOff\l|<value>value\r" pos="2685,420" fillcolor="blue"];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Files>Files\r|<Note>Note\r|<Config>Config\r|<Index>Index\r|<Size>Size\r|<Start>Start\r|<Stop>Stop\r" _Files_type="VuoList_VuoText" _Note_type="VuoMidiNote" _Config_type="VuoTable" _Index_type="VuoInteger" _Index_suggestedMin="1" _Index="1" _Size_type="VuoReal" _Size="0.40000000000000002" _Start_type="event" _Stop_type="event"];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Layer>Layer\l|<Audio>Audio\l" _Layer_type="VuoLayer" _Audio_type="VuoList_VuoAudioSamples"];
+
+AdjustLoudness:adjustedSamples -> PublishedOutputs:Audio;
+AppendTexts:compositeText -> FindTableRow:value;
+BecameGreaterThan:becameGreaterThan -> StopTrigger2:event;
+BlendColors2:blendedColor -> MakeRectangleLayer2:color;
+BlendColors:blendedColor -> MakeRectangleLayer:color;
+CombineLayers:combinedLayer -> PublishedOutputs:Layer;
+ConvertBooleanToReal:real -> MakeList3:1;
+ConvertTextToInteger3:integer -> FilterNote2:noteNumber;
+ConvertTextToInteger:integer -> FilterNote2:channel;
+ConvertTextToReal2:real -> Curve:duration;
+Curve:value -> AdjustLoudness:loudness;
+Curve:value -> PlayStatus3:value [style=invis];
+FilterNote2:velocity -> ShareEvent:event;
+FindTableRow:foundRowValues -> GetItemFromList6:list;
+FindTableRow:foundRowValues -> GetItemFromList7:list;
+FireOnDisplayRefresh:requestedFrame -> MeasureTime:time;
+GetFileURLValues:fileName -> SplitText:text;
+GetFileURLValues:path -> PlayAudioFile:url [style=invis];
+GetItemFromList2:item -> MakeTextLayer:text;
+GetItemFromList3:item -> ConvertTextToReal2:text;
+GetItemFromList4:item -> MakeHexColor:hexCode;
+GetItemFromList6:item -> ConvertTextToInteger:text;
+GetItemFromList7:item -> ConvertTextToInteger3:text;
+GetItemFromList:item -> GetFileURLValues:url;
+GetRGBColorValues:blue -> MakeRGBColor2:blue;
+GetRGBColorValues:blue -> MakeRGBColor3:blue;
+GetRGBColorValues:blue -> MakeRGBColor:blue;
+GetRGBColorValues:green -> MakeRGBColor2:green;
+GetRGBColorValues:green -> MakeRGBColor3:green;
+GetRGBColorValues:green -> MakeRGBColor:green;
+GetRGBColorValues:red -> MakeRGBColor2:red;
+GetRGBColorValues:red -> MakeRGBColor3:red;
+GetRGBColorValues:red -> MakeRGBColor:red;
+MakeHexColor:color -> GetRGBColorValues:color;
+MakeList2:list -> AppendTexts:texts;
+MakeList3:list -> Multiply:values;
+MakeList:list -> CombineLayers:layers;
+MakeRGBColor2:color -> BlendColors2:background;
+MakeRGBColor2:color -> BlendColors:foreground;
+MakeRGBColor3:color -> BlendColors2:foreground;
+MakeRGBColor:color -> BlendColors:background;
+MakeRectangleLayer2:layer -> MakeList:2;
+MakeRectangleLayer:layer -> MakeList:1;
+MakeTextLayer:layer -> MakeList:3;
+MeasureTime:elapsedTime -> BecameGreaterThan:a;
+MeasureTime:elapsedTime -> Curve:time;
+Multiply:product -> BlendColors2:foregroundOpacity;
+Multiply:product -> BlendColors:foregroundOpacity;
+PlayAudioFile:decodedChannels -> AdjustLoudness:samples;
+PlayAudioFile:finishedPlayback -> StopTrigger2:event;
+PlayStatus2:sameValue -> SelectEventInput3:which;
+PlayStatus2:sameValue -> SelectEventInput:which;
+PlayStatus3:sameValue -> MakeList3:2;
+PublishedInputs:Config -> FindTableRow:table;
+PublishedInputs:Files -> GetItemFromList:list;
+PublishedInputs:Index -> GetItemFromList:which;
+PublishedInputs:Index -> SummarizeValue3:value;
+PublishedInputs:Note -> FilterNote2:note;
+PublishedInputs:Size -> ShareValue2:value;
+PublishedInputs:Start -> ShareEvent:event;
+PublishedInputs:Stop -> StopTrigger2:event;
+SelectEventInput3:out -> MeasureTime:start;
+SelectEventInput:out -> MeasureTime:pause;
+SelectEventInput:out -> MeasureTime:reset;
+SelectEventInput:out -> PlayAudioFile:play;
+SelectEventInput:out -> PlayAudioFile:setTime;
+SelectEventInput:out -> Switch:turnOn;
+ShareEvent:sameEvent -> SelectEventInput3:trueOption;
+ShareEvent:sameEvent -> SelectEventInput:falseOption;
+ShareValue2:sameValue -> MakeRectangleLayer2:height;
+ShareValue2:sameValue -> MakeRectangleLayer2:width;
+ShareValue2:sameValue -> MakeRectangleLayer:height;
+ShareValue2:sameValue -> MakeRectangleLayer:width;
+ShareValue2:sameValue -> MakeTextLayer:wrapWidth;
+ShareValue:sameValue -> ConvertBooleanToReal:boolean;
+SplitText:splitTexts -> GetItemFromList2:list;
+SplitText:splitTexts -> GetItemFromList3:list;
+SplitText:splitTexts -> GetItemFromList4:list;
+StopTrigger2:sameEvent -> MeasureTime:pause;
+StopTrigger2:sameEvent -> MeasureTime:reset;
+StopTrigger2:sameEvent -> PlayAudioFile:pause;
+StopTrigger2:sameEvent -> PlayAudioFile:setTime;
+StopTrigger2:sameEvent -> Switch:turnOff;
+SummarizeValue3:summary -> MakeList2:2;
+Switch:value -> PlayStatus2:value [style=invis];
+Switch:value -> ShareValue:value [style=invis];
+}
