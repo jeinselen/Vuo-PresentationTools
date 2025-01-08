@@ -41,6 +41,7 @@ MakeHexColor [type="vuo.color.make.hex" version="1.0.0" label="Make Hex Color|<r
 MakeList [type="vuo.list.make.3.VuoLayer" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<list>list\r" pos="3312,-19"];
 MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="1036,686" _1="\"patch\""];
 MakeList3 [type="vuo.list.make.2.VuoReal" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="2562,71"];
+MakeList4 [type="vuo.list.make.2.VuoAudioSamples" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="3342,521" fillcolor="tangerine"];
 MakeRGBColor [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-255" _opacity="0.20000000000000001"];
 MakeRGBColor2 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-150" _opacity="0.40000000000000002"];
 MakeRGBColor3 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-45" _opacity="0.80000000000000004"];
@@ -59,7 +60,6 @@ ShareEvent [type="vuo.event.share" version="1.0.0" label="Trigger Event|<refresh
 ShareValue2 [type="vuo.data.share.VuoReal" version="1.0.0" label="Share Value|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2805,30" _value="0.40000000000000002"];
 ShareValue3 [type="vuo.data.share.VuoReal" version="1.0.0" label="Share Value|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2805,90" _value="0.40000000000000002"];
 SmoothWithDuration [type="vuo.motion.smooth.duration.VuoReal" version="1.1.0" label="Smooth with Duration|<refresh>refresh\l|<time>time\l|<setPosition>setPosition\l|<setTarget>setTarget\l|<duration>duration\l|<curve>curve\l|<easing>easing\l|<position>position\r|<reachedTarget>reachedTarget\r" pos="2790,690" fillcolor="tangerine" _setPosition="1.0" _curve="\"linear\"" _easing="\"in\""];
-SpinOffValue2 [type="vuo.event.spinOffValue.VuoReal" version="1.0.0" label="Spin Off Value|<refresh>refresh\l|<value>value\l|<spunOff>spunOff\r" pos="3060,600" fillcolor="yellow" _spunOff_eventThrottling="enqueue"];
 SplitText [type="vuo.text.split.VuoText" version="1.0.0" label="Split Text|<refresh>refresh\l|<text>text\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<splitTexts>splitTexts\r" pos="1455,360" fillcolor="magenta" _separator="\"-\"" _includeEmptyParts="true"];
 StopTrigger2 [type="vuo.event.share" version="1.0.0" label="Stop Event|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="2370,690" fillcolor="magenta"];
 Switch [type="vuo.logic.switch" version="1.0.0" label="Play Status|<refresh>refresh\l|<toggle>toggle\l|<turnOn>turnOn\l|<turnOff>turnOff\l|<value>value\r" pos="2685,405" fillcolor="blue"];
@@ -67,7 +67,6 @@ PublishedInputs [type="vuo.in" label="PublishedInputs|<Files>Files\r|<Note>Note\
 PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Layer>Layer\l" _Layer_type="VuoLayer"];
 
 AdjustLoudness:adjustedSamples -> SendLiveAudio2:sendChannels;
-AdjustLoudness:adjustedSamples -> SendLiveAudio:sendChannels;
 AppendTexts:compositeText -> FindTableRow:value;
 BecameLessThan:becameLessThan -> StopTrigger2:event;
 BlendColors2:blendedColor -> MakeRectangleLayer2:color;
@@ -113,6 +112,7 @@ MakeFont:font -> MakeTextLayer:font;
 MakeHexColor:color -> GetRGBColorValues:color;
 MakeList2:list -> AppendTexts:texts;
 MakeList3:list -> Multiply:values;
+MakeList4:list -> SendLiveAudio:sendChannels;
 MakeList:list -> CombineLayers:layers;
 MakeRGBColor2:color -> BlendColors2:background;
 MakeRGBColor2:color -> BlendColors:foreground;
@@ -156,7 +156,6 @@ ShareValue3:sameValue -> MakeRectangleLayer:roundness;
 SmoothWithDuration:position -> AdjustLoudness:loudness;
 SmoothWithDuration:position -> BecameLessThan:a;
 SmoothWithDuration:position -> MakeList3:2;
-SmoothWithDuration:position -> SpinOffValue2:value;
 SplitText:splitTexts -> GetItemFromList2:list;
 SplitText:splitTexts -> GetItemFromList3:list;
 SplitText:splitTexts -> GetItemFromList4:list;
