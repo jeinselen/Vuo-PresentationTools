@@ -41,7 +41,6 @@ MakeHexColor [type="vuo.color.make.hex" version="1.0.0" label="Make Hex Color|<r
 MakeList [type="vuo.list.make.3.VuoLayer" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<list>list\r" pos="3312,-19"];
 MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="1036,686" _1="\"patch\""];
 MakeList3 [type="vuo.list.make.2.VuoReal" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="2562,71"];
-MakeList4 [type="vuo.list.make.2.VuoAudioSamples" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="3342,521" fillcolor="tangerine"];
 MakeRGBColor [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-255" _opacity="0.20000000000000001"];
 MakeRGBColor2 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-150" _opacity="0.40000000000000002"];
 MakeRGBColor3 [type="vuo.color.make.rgb" version="2.0.0" label="Make RGB Color|<refresh>refresh\l|<red>red\l|<green>green\l|<blue>blue\l|<opacity>opacity\l|<color>color\r" pos="2580,-45" _opacity="0.80000000000000004"];
@@ -54,8 +53,7 @@ PlayStatus2 [type="vuo.data.share.VuoBoolean" version="1.0.0" label="Play Status
 SelectEventInput [type="vuo.select.in.boolean.event2" version="3.0.0" label="Play Event|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2310,510" fillcolor="green"];
 SelectEventInput3 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Fade Event|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2310,600" fillcolor="orange"];
 SelectLatest [type="vuo.select.latest.2.VuoReal" version="1.0.0" label="Select Latest|<refresh>refresh\l|<option1>option1\l|<option2>option2\l|<latest>latest\r" pos="2595,720" fillcolor="tangerine" _option1="1.0" _option2="0.0"];
-SendLiveAudio [type="vuo.audio.send2" version="2.0.1" label="Send Live Audio|<refresh>refresh\l|<device>device\l|<sendChannels>sendChannels\l" pos="3375,495" fillcolor="tangerine" _device="null"];
-SendLiveAudio2 [type="vuo.audio.send2" version="2.0.1" label="Send Live Audio|<refresh>refresh\l|<device>device\l|<sendChannels>sendChannels\l" pos="3375,420" fillcolor="tangerine"];
+SendLiveAudio2 [type="vuo.audio.send2" version="2.0.1" label="Send Live Audio|<refresh>refresh\l|<device>device\l|<sendChannels>sendChannels\l" pos="3225,495" fillcolor="tangerine"];
 ShareEvent [type="vuo.event.share" version="1.0.0" label="Trigger Event|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="2145,630" fillcolor="lime"];
 ShareValue2 [type="vuo.data.share.VuoReal" version="1.0.0" label="Share Value|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2805,30" _value="0.40000000000000002"];
 ShareValue3 [type="vuo.data.share.VuoReal" version="1.0.0" label="Share Value|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2805,90" _value="0.40000000000000002"];
@@ -112,7 +110,6 @@ MakeFont:font -> MakeTextLayer:font;
 MakeHexColor:color -> GetRGBColorValues:color;
 MakeList2:list -> AppendTexts:texts;
 MakeList3:list -> Multiply:values;
-MakeList4:list -> SendLiveAudio:sendChannels;
 MakeList:list -> CombineLayers:layers;
 MakeRGBColor2:color -> BlendColors2:background;
 MakeRGBColor2:color -> BlendColors:foreground;
