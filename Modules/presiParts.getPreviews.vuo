@@ -1,0 +1,46 @@
+/**
+ * @file
+ * @brief getPreviews
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+CompareTexts [type="vuo.text.compare" version="1.1.0" label="Compare Texts|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1500,465" _a="\".png.jpeg.jpg.gif.bmp.exr.hdr.psd.pct.raw.cr2.dng.dcr.nef.raf.mos.kdc.tif.tiff.tga.targa.webp.heic\"" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}"];
+ConvertFrameToImage3 [type="vuo.type.videoframe.image" version="1.0.0" label="Convert Frame to Image|<refresh>refresh\l|<frame>frame\l|<image>image\r" pos="2010,1185"];
+CountItemsInList [type="vuo.list.count.VuoLayer" version="1.0.0" label="Count Items in List|<refresh>refresh\l|<list>list\l|<itemCount>itemCount\r" pos="1980,270"];
+DecodeMovieImage [type="vuo.video.decodeImage" version="2.2.1" label="Decode Movie Image|<refresh>refresh\l|<url>url\l|<frameTime>frameTime\l|<loop>loop\l|<videoFrame>videoFrame\r" pos="1860,480" _frameTime="0.5" _loop="\"loop\""];
+FetchImage2 [type="vuo.image.fetch" version="2.1.0" label="Fetch Image|<refresh>refresh\l|<url>url\l|<image>image\r" pos="1860,570"];
+GetFileURLValues [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="1170,450"];
+MakeImageLayer [type="vuo.layer.make.scaled" version="3.1.0" label="Make Image Layer|<refresh>refresh\l|<image>image\l|<anchor>anchor\l|<center>center\l|<rotation>rotation\l|<width>width\l|<fixed>fixed\l|<opacity>opacity\l|<layer>layer\r" pos="2325,465" _anchor="\{\"horizontalAlignment\":\"center\",\"verticalAlignment\":\"center\"\}" _center="\{\"x\":0.0,\"y\":0.0\}" _rotation="0.0" _width="0.20000000000000001" _fixed="\"horizontal\"" _opacity="1.0"];
+ProcessList [type="vuo.list.process.VuoText.VuoLayer" version="1.0.1" label="Process List|<refresh>refresh\l|<fire>fire\l|<processedItem>processedItem\l|<processedList>processedList\r|<processItem>processItem\r" pos="1500,270" _processedList_eventThrottling="enqueue" _processItem_eventThrottling="enqueue"];
+SelectInput3 [type="vuo.select.in.boolean.VuoImage" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2145,465"];
+SelectOutput [type="vuo.select.out.boolean.VuoText" version="2.0.0" label="Select Output|<refresh>refresh\l|<which>which\l|<in>in\l|<falseOption>falseOption\r|<trueOption>trueOption\r" pos="1650,510"];
+ShareValue [type="vuo.data.share.VuoText" version="1.0.0" label="URL|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="1035,525"];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Files>Files\r" _Files_type="VuoList_VuoText"];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Layers>Layers\l|<Count>Count\l" _Layers_type="VuoList_VuoLayer" _Count_type="VuoInteger"];
+
+CompareTexts:result -> SelectInput3:which;
+CompareTexts:result -> SelectOutput:which;
+ConvertFrameToImage3:image -> SelectInput3:falseOption;
+CountItemsInList:itemCount -> PublishedOutputs:Count;
+DecodeMovieImage:videoFrame -> ConvertFrameToImage3:frame;
+FetchImage2:image -> SelectInput3:trueOption;
+GetFileURLValues:extension -> CompareTexts:b;
+MakeImageLayer:layer -> ProcessList:processedItem;
+ProcessList:processItem -> ShareValue:value;
+ProcessList:processedList -> CountItemsInList:list;
+ProcessList:processedList -> PublishedOutputs:Layers;
+PublishedInputs:Files -> ProcessList:fire;
+SelectInput3:out -> MakeImageLayer:image;
+SelectOutput:falseOption -> DecodeMovieImage:frameTime [event=true];
+SelectOutput:falseOption -> DecodeMovieImage:url;
+SelectOutput:trueOption -> FetchImage2:url;
+ShareValue:sameValue -> GetFileURLValues:url;
+ShareValue:sameValue -> SelectOutput:in;
+}
