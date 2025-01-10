@@ -1,0 +1,61 @@
+/**
+ * @file
+ * @brief Filter Midi Controller
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1035" _includeEmptyParts="true"];
+AppendTexts2 [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1185" _includeEmptyParts="true"];
+ConvertTextToInteger5 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1020"];
+ConvertTextToInteger6 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1035"];
+ConvertTextToInteger7 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1200"];
+ConvertTextToInteger8 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1215"];
+FilterController [type="vuo.midi.filter.controller" version="2.0.0" label="Filter Controller|<refresh>refresh\l|<controller>controller\l|<channel>channel\l|<controllerNumber>controllerNumber\l|<value>value\r" pos="1200,990"];
+FilterController2 [type="vuo.midi.filter.controller" version="2.0.0" label="Filter Controller|<refresh>refresh\l|<controller>controller\l|<channel>channel\l|<controllerNumber>controllerNumber\l|<value>value\r" pos="1200,1140"];
+FindTableRow [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1005" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
+FindTableRow2 [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1155" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
+GetItemFromList2 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1230" _which="3"];
+GetItemFromList3 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1155" _which="2"];
+GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1005" _which="2"];
+GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1080" _which="3"];
+Increased [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,990"];
+Increased2 [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,1140"];
+MakeList [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1046" _2="\"1\""];
+MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1196" _2="\"2\""];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Controller>Controller\r|<Filter>Filter\r|<Value>Value\r" _Controller_type="VuoMidiController" _Filter_type="VuoTable" _Value_type="VuoText" _Value="\"Start\""];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Event>Event\l" _Event_type="event"];
+
+AppendTexts2:compositeText -> FindTableRow2:value;
+AppendTexts:compositeText -> FindTableRow:value;
+ConvertTextToInteger5:integer -> FilterController:channel;
+ConvertTextToInteger6:integer -> FilterController:controllerNumber;
+ConvertTextToInteger7:integer -> FilterController2:channel;
+ConvertTextToInteger8:integer -> FilterController2:controllerNumber;
+FilterController2:value -> Increased2:value;
+FilterController:value -> Increased:value;
+FindTableRow2:foundRowValues -> GetItemFromList2:list;
+FindTableRow2:foundRowValues -> GetItemFromList3:list;
+FindTableRow:foundRowValues -> GetItemFromList6:list;
+FindTableRow:foundRowValues -> GetItemFromList7:list;
+GetItemFromList2:item -> ConvertTextToInteger8:text;
+GetItemFromList3:item -> ConvertTextToInteger7:text;
+GetItemFromList6:item -> ConvertTextToInteger5:text;
+GetItemFromList7:item -> ConvertTextToInteger6:text;
+Increased2:increased -> PublishedOutputs:Event;
+Increased:increased -> PublishedOutputs:Event;
+MakeList2:list -> AppendTexts2:texts;
+MakeList:list -> AppendTexts:texts;
+PublishedInputs:Controller -> FilterController2:controller;
+PublishedInputs:Controller -> FilterController:controller;
+PublishedInputs:Filter -> FindTableRow2:table;
+PublishedInputs:Filter -> FindTableRow:table;
+PublishedInputs:Value -> MakeList2:1;
+PublishedInputs:Value -> MakeList:1;
+}
