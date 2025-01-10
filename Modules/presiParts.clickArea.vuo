@@ -1,0 +1,24 @@
+/**
+ * @file
+ * @brief clickArea
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+IsWithinRectangle [type="vuo.point.within.rectangle" version="1.0.0" label="Is within Rectangle|<refresh>refresh\l|<point>point\l|<center>center\l|<width>width\l|<height>height\l|<withinRectangle>withinRectangle\r" pos="960,255" _width="0.20000000000000001" _height="0.20000000000000001"];
+SelectEventInput3 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1125,255"];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Point>Point\r|<Center>Center\r" _Point_type="VuoPoint2d" _Point="\{\"x\":0,\"y\":0\}" _Center_type="VuoPoint2d" _Center="\{\"x\":-0.5,\"y\":0.5\}"];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Out>Out\l" _Out_type="event"];
+
+IsWithinRectangle:withinRectangle -> SelectEventInput3:trueOption;
+IsWithinRectangle:withinRectangle -> SelectEventInput3:which;
+PublishedInputs:Center -> IsWithinRectangle:center;
+PublishedInputs:Point -> IsWithinRectangle:point;
+SelectEventInput3:out -> PublishedOutputs:Out;
+}
