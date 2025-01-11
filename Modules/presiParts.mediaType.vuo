@@ -1,0 +1,25 @@
+/**
+ * @file
+ * @brief Media Type
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+GetFileURLValues2 [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="1260,45" fillcolor="tangerine"];
+IfImage3 [type="vuo.text.compare" version="1.1.0" label="If Image|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1635,60" fillcolor="violet" _a="\".png.jpeg.jpg.gif.bmp.exr.hdr.psd.pct.raw.cr2.dng.dcr.nef.raf.mos.kdc.tif.tiff.tga.targa.webp.heic\"" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}"];
+IfMovie2 [type="vuo.text.compare" version="1.1.0" label="If Movie|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1635,150" fillcolor="orange" _a="\".mov.avi.dv.mpeg.mpg.mp2.m4v.mp4.webm.ogv\"" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}"];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<URL>URL\r" _URL_type="VuoText"];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Image>Image\l|<Movie>Movie\l" _Image_type="VuoBoolean" _Movie_type="VuoBoolean"];
+
+GetFileURLValues2:extension -> IfImage3:b;
+GetFileURLValues2:extension -> IfMovie2:b;
+IfImage3:result -> PublishedOutputs:Image;
+IfMovie2:result -> PublishedOutputs:Movie;
+PublishedInputs:URL -> GetFileURLValues2:url;
+}

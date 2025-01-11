@@ -29,7 +29,7 @@ Increased [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increas
 Increased2 [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,1140"];
 MakeList [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1046" _2="\"1\""];
 MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1196" _2="\"2\""];
-PublishedInputs [type="vuo.in" label="PublishedInputs|<Note>Note\r|<Filter>Filter\r|<Value>Value\r" _Note_type="VuoMidiNote" _Filter_type="VuoTable" _Value_type="VuoText" _Value="\"Start\""];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Note>Note\r|<Filter>Filter\r|<Value>Value\r" _Note_type="VuoMidiNote" _Filter_type="VuoTable" _Value_type="VuoText" _Value="\"start\""];
 PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Event>Event\l" _Event_type="event"];
 
 AppendTexts2:compositeText -> FindTableRow2:value;
