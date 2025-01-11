@@ -1,0 +1,134 @@
+/**
+ * @file
+ * @brief PresiPlay
+ * Turns a folder of videos and images into a presentation
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @version 1.0
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @keywords presentation, video, slideshow
+ * @copyright Copyright © 2024 [John Einselen](https://vuo.org/user/127)
+ * @image icon Play Presentation.png
+ * @url homepage https://github.com/jeinselen/Vuo-PlayPresentation
+ * @url documentation https://github.com/jeinselen/Vuo-PlayPresentation
+ * @bundle com.jeinselen.playPresentation
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+AppendLists [type="vuo.list.append.VuoText" version="1.0.1" label="Append Lists|<refresh>refresh\l|<list1>list1\l|<list2>list2\l|<combinedList>combinedList\r" pos="-75,135" fillcolor="tangerine"];
+AreAllTrue [type="vuo.logic.areAllTrue" version="2.0.0" label="Are All True|<refresh>refresh\l|<values>values\l|<allTrue>allTrue\r" pos="1605,405" fillcolor="cyan"];
+BecameFalse [type="vuo.event.becameFalse2" version="2.0.0" label="Became False|<refresh>refresh\l|<value>value\l|<becameFalse>becameFalse\r" pos="1020,30" fillcolor="violet" _value="false"];
+BecameTrue [type="vuo.event.becameTrue" version="1.0.0" label="Became True|<refresh>refresh\l|<value>value\l|<becameTrue>becameTrue\r" pos="1020,90" fillcolor="magenta"];
+ChangeMouseCursor [type="vuo.window.cursor2" version="2.0.0" label="Change Mouse Cursor|<refresh>refresh\l|<windowDescription>windowDescription\l|<cursor>cursor\l|<changedWindowDescription>changedWindowDescription\r" pos="1740,870" fillcolor="blue" _cursor="\"none\""];
+ChangeWindowScreen [type="vuo.window.fullscreen2" version="2.0.0" label="Change Window Screen|<refresh>refresh\l|<windowDescription>windowDescription\l|<fullscreen>fullscreen\l|<screen>screen\l|<changedWindowDescription>changedWindowDescription\r" pos="1335,870" fillcolor="blue" _screen="\{\"type\":\"active\"\}"];
+ChangeWindowTitle [type="vuo.window.title2" version="2.0.0" label="Change Window Title|<refresh>refresh\l|<windowDescription>windowDescription\l|<title>title\l|<changedWindowDescription>changedWindowDescription\r" pos="1545,870" fillcolor="blue" _title="\"\""];
+CompareTexts [type="vuo.text.compare" version="1.1.0" label="Compare Texts|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="870,150" fillcolor="violet" _a="\".png.jpeg.jpg.gif.bmp.exr.hdr.psd.pct.raw.cr2.dng.dcr.nef.raf.mos.kdc.tif.tiff.tga.targa.webp.heic\"" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}"];
+CompareTexts2 [type="vuo.text.compare" version="1.1.0" label="Loop|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1425,315" fillcolor="magenta" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}" _b="\"loop\""];
+ConvertFrameToImage2 [type="vuo.type.videoframe.image" version="1.0.0" label="Convert Frame to Image|<refresh>refresh\l|<frame>frame\l|<image>image\r" pos="2115,285"];
+CountItemsInList [type="vuo.list.count.VuoText" version="1.0.0" label="Count|<refresh>refresh\l|<list>list\l|<itemCount>itemCount\r" pos="120,75" fillcolor="tangerine"];
+CountWithinRange [type="vuo.math.countWithinRange.VuoInteger" version="1.0.2" label="Count within Range|<refresh>refresh\l|<increment>increment\l|<decrement>decrement\l|<setCount>setCount\l|<minimum>minimum\l|<maximum>maximum\l|<wrapMode>wrapMode\l|<count>count\r" pos="330,180" fillcolor="tangerine" _increment="1" _decrement="1" _setCount="1" _minimum="1" _wrapMode="\"saturate\""];
+DecodeMovieImage [type="vuo.video.decodeImage" version="2.2.1" label="Decode Movie Image|<refresh>refresh\l|<url>url\l|<frameTime>frameTime\l|<loop>loop\l|<videoFrame>videoFrame\r" pos="1725,75" _loop="\"loop\""];
+DisplayOpenWindow [type="vuo.ui.open" version="1.0.0" label="Display \"Open\" Window|<refresh>refresh\l|<show>show\l|<title>title\l|<buttonLabel>buttonLabel\l|<fileType>fileType\l|<defaultURL>defaultURL\l|<selectMultiple>selectMultiple\l|<parentWindow>parentWindow\l|<selectedURLs>selectedURLs\r|<canceled>canceled\r" pos="-690,150" fillcolor="orange" _title="\"Choose Directory\"" _buttonLabel="\"Open\"" _fileType="\"folder\"" _defaultURL="\"\"" _selectMultiple="false"];
+FetchImage [type="vuo.image.fetch" version="2.1.0" label="Fetch Image|<refresh>refresh\l|<url>url\l|<image>image\r" pos="1815,495" fillcolor="violet"];
+FireOnStart [type="vuo.event.fireOnStart" version="1.0.0" label="Fire on Start|<refresh>refresh\l|<started>started\r" pos="-930,270" fillcolor="yellow" _started_eventThrottling="enqueue"];
+Forward2 [type="vuo.keyboard.button2" version="2.0.0" label="Open|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="-945,150" fillcolor="violet" _key="\"O\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+GetFileURLValues [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="705,135" fillcolor="violet"];
+GetFirstItemInList2 [type="vuo.list.get.first.VuoText" version="1.0.0" label="Get First Item in List|<refresh>refresh\l|<list>list\l|<firstItem>firstItem\r" pos="-480,150" fillcolor="orange"];
+GetItemFromList [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="525,135" fillcolor="tangerine"];
+GetMovieInfo [type="vuo.video.info" version="2.0.2" label="Get Movie Info|<refresh>refresh\l|<url>url\l|<duration>duration\r" pos="1245,210" fillcolor="orange"];
+ListFiles [type="vuo.file.list" version="1.0.2" label="List Files|<refresh>refresh\l|<folder>folder\l|<includeSubfolders>includeSubfolders\l|<fileType>fileType\l|<files>files\r" pos="-240,150" fillcolor="tangerine" _includeSubfolders="false" _fileType="\"movie\""];
+ListFiles2 [type="vuo.file.list" version="1.0.2" label="List Files|<refresh>refresh\l|<folder>folder\l|<includeSubfolders>includeSubfolders\l|<fileType>fileType\l|<files>files\r" pos="-240,60" fillcolor="tangerine" _includeSubfolders="false" _fileType="\"image\""];
+LockWindowAspectRatio [type="vuo.window.aspectRatio2" version="2.0.0" label="Lock Window Aspect Ratio|<refresh>refresh\l|<windowDescription>windowDescription\l|<width>width\l|<height>height\l|<changedWindowDescription>changedWindowDescription\r" pos="915,870" fillcolor="blue" _width="16.0" _height="9.0"];
+Loop2 [type="vuo.text.compare" version="1.1.0" label="Next|<refresh>refresh\l|<a>a\l|<comparison>comparison\l|<b>b\l|<result>result\r" pos="1425,420" fillcolor="cyan" _comparison="\{\"type\":\"contains\",\"isCaseSensitive\":false\}" _b="\"next\""];
+MakeList [type="vuo.list.make.2.VuoBoolean" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="1572,416" fillcolor="cyan"];
+Play2 [type="vuo.event.share" version="1.0.0" label="Backward|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="390,390" fillcolor="magenta"];
+PlayMovie [type="vuo.video.play" version="2.1.0" label="Play Movie|<refresh>refresh\l|<play>play\l|<pause>pause\l|<setTime>setTime\l|<url>url\l|<loop>loop\l|<playbackRate>playbackRate\l|<optimization>optimization\l|<decodedVideo>decodedVideo\r|<decodedAudio>decodedAudio\r|<finishedPlayback>finishedPlayback\r" pos="1725,165" fillcolor="orange" _loop="\"none\"" _playbackRate="1.0" _optimization="\"auto\"" _decodedVideo_eventThrottling="drop" _decodedAudio_eventThrottling="enqueue" _finishedPlayback_eventThrottling="enqueue"];
+ReceiveKeyboardButtons [type="vuo.keyboard.button2" version="2.0.0" label="Forward|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="-945,330" fillcolor="violet" _key="\"RightArrow\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+ReceiveKeyboardButtons2 [type="vuo.keyboard.button2" version="2.0.0" label="Backward|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="-945,435" fillcolor="violet" _key="\"LeftArrow\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+ReceiveKeyboardButtons3 [type="vuo.keyboard.button2" version="2.0.0" label="Reset|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="-945,540" fillcolor="violet" _key="\"R\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+RenderImageToWindow [type="vuo.image.render.window2" version="4.0.0" label="Render Image to Window|<refresh>refresh\l|<image>image\l|<setWindowDescription>setWindowDescription\l|<updatedWindow>updatedWindow\r" pos="2280,150" fillcolor="blue" _updatedWindow_eventThrottling="enqueue"];
+Reset2 [type="vuo.keyboard.button2" version="2.0.0" label="Fullscreen|<refresh>refresh\l|<window>window\l|<key>key\l|<modifierKey>modifierKey\l|<repeatWhenHeld>repeatWhenHeld\l|<pressed>pressed\r|<released>released\r" pos="-945,645" fillcolor="violet" _key="\"F\"" _modifierKey="\"any\"" _repeatWhenHeld="false" _pressed_eventThrottling="enqueue" _released_eventThrottling="enqueue"];
+SelectEventInput [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1755,405" fillcolor="cyan"];
+SelectEventInput2 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1755,315" fillcolor="magenta"];
+SelectInput [type="vuo.select.in.boolean.VuoReal" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1545,195" fillcolor="orange"];
+SelectInput2 [type="vuo.select.in.boolean.VuoWindowDescription" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1155,870" fillcolor="blue"];
+SelectInput3 [type="vuo.select.in.boolean.VuoImage" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="2025,150" fillcolor="violet"];
+SelectOutput [type="vuo.select.out.boolean.VuoText" version="2.0.0" label="Select Output|<refresh>refresh\l|<which>which\l|<in>in\l|<falseOption>falseOption\r|<trueOption>trueOption\r" pos="1020,210" fillcolor="violet"];
+ShareEvent [type="vuo.event.share" version="1.0.0" label="Forward|<refresh>refresh\l|<event>event\l|<sameEvent>sameEvent\r" pos="390,330" fillcolor="cyan"];
+SortList [type="vuo.list.sort.VuoText" version="1.0.0" label="Sort List|<refresh>refresh\l|<list>list\l|<sortOrder>sortOrder\l|<sortedList>sortedList\r" pos="90,135" fillcolor="tangerine" _sortOrder="\"ascending\""];
+SpinOffValue [type="vuo.event.spinOffValue.VuoText" version="1.0.0" label="Spin Off Value|<refresh>refresh\l|<value>value\l|<spunOff>spunOff\r" pos="1245,420" fillcolor="cyan" _spunOff_eventThrottling="enqueue"];
+Subtract [type="vuo.math.subtract.VuoReal" version="1.2.0" label="Subtract|<refresh>refresh\l|<a>a\l|<b>b\l|<difference>difference\r" pos="1395,210" fillcolor="orange" _b="0.035000000000000003"];
+Switch [type="vuo.logic.switch" version="1.0.0" label="Switch|<refresh>refresh\l|<toggle>toggle\l|<turnOn>turnOn\l|<turnOff>turnOff\l|<value>value\r" pos="525,330" fillcolor="cyan"];
+Switch2 [type="vuo.logic.switch" version="1.0.0" label="Switch|<refresh>refresh\l|<toggle>toggle\l|<turnOn>turnOn\l|<turnOff>turnOff\l|<value>value\r" pos="915,1020" fillcolor="violet"];
+UnlockWindowAspectRatio [type="vuo.window.aspectRatio.reset2" version="2.0.0" label="Unlock Window Aspect Ratio|<refresh>refresh\l|<windowDescription>windowDescription\l|<changedWindowDescription>changedWindowDescription\r" pos="915,960" fillcolor="blue"];
+
+AppendLists:combinedList -> SortList:list;
+AreAllTrue:allTrue -> SelectEventInput:which;
+ChangeMouseCursor:changedWindowDescription -> RenderImageToWindow:setWindowDescription;
+ChangeWindowScreen:changedWindowDescription -> ChangeWindowTitle:windowDescription;
+ChangeWindowTitle:changedWindowDescription -> ChangeMouseCursor:windowDescription;
+CompareTexts2:result -> SelectEventInput2:which;
+CompareTexts:result -> BecameTrue:value;
+CompareTexts:result -> SelectInput3:which;
+CompareTexts:result -> SelectOutput:which;
+ConvertFrameToImage2:image -> SelectInput3:falseOption;
+CountItemsInList:itemCount -> CountWithinRange:maximum;
+CountWithinRange:count -> GetItemFromList:which;
+DisplayOpenWindow:selectedURLs -> GetFirstItemInList2:list;
+FetchImage:image -> SelectInput3:trueOption;
+FireOnStart:started -> CountWithinRange:setCount;
+FireOnStart:started -> DisplayOpenWindow:show;
+FireOnStart:started -> LockWindowAspectRatio:windowDescription;
+FireOnStart:started -> Switch2:turnOff;
+FireOnStart:started -> Switch:turnOn;
+FireOnStart:started -> UnlockWindowAspectRatio:windowDescription;
+Forward2:pressed -> DisplayOpenWindow:show;
+GetFileURLValues:extension -> CompareTexts:b;
+GetFirstItemInList2:firstItem -> ListFiles2:folder;
+GetFirstItemInList2:firstItem -> ListFiles:folder;
+GetItemFromList:item -> GetFileURLValues:url;
+GetItemFromList:item -> SelectOutput:in;
+GetMovieInfo:duration -> Subtract:a;
+ListFiles2:files -> AppendLists:list1;
+ListFiles:files -> AppendLists:list2;
+LockWindowAspectRatio:changedWindowDescription -> SelectInput2:falseOption;
+Loop2:result -> MakeList:2;
+MakeList:list -> AreAllTrue:values;
+Play2:sameEvent -> Switch:turnOff;
+PlayMovie:decodedVideo -> ConvertFrameToImage2:frame;
+PlayMovie:finishedPlayback -> SelectEventInput2:trueOption;
+PlayMovie:finishedPlayback -> SelectEventInput:trueOption;
+ReceiveKeyboardButtons2:pressed -> CountWithinRange:decrement;
+ReceiveKeyboardButtons2:pressed -> Play2:event;
+ReceiveKeyboardButtons3:pressed -> CountWithinRange:setCount;
+ReceiveKeyboardButtons3:pressed -> ShareEvent:event;
+ReceiveKeyboardButtons:pressed -> CountWithinRange:increment;
+ReceiveKeyboardButtons:pressed -> ShareEvent:event;
+Reset2:pressed -> Switch2:toggle;
+SelectEventInput2:out -> PlayMovie:play;
+SelectEventInput2:out -> SelectInput:which;
+SelectEventInput:out -> CountWithinRange:increment;
+SelectEventInput:out -> PlayMovie:play;
+SelectInput2:out -> ChangeWindowScreen:windowDescription;
+SelectInput3:out -> RenderImageToWindow:image;
+SelectInput:out -> PlayMovie:setTime;
+SelectOutput:falseOption -> CompareTexts2:a;
+SelectOutput:falseOption -> GetMovieInfo:url;
+SelectOutput:falseOption -> PlayMovie:url;
+SelectOutput:falseOption -> SpinOffValue:value;
+SelectOutput:trueOption -> FetchImage:url;
+ShareEvent:sameEvent -> PlayMovie:play;
+ShareEvent:sameEvent -> Switch:turnOn;
+SortList:sortedList -> CountItemsInList:list;
+SortList:sortedList -> GetItemFromList:list;
+SpinOffValue:spunOff -> Loop2:a;
+Subtract:difference -> SelectInput:falseOption;
+Switch2:value -> ChangeWindowScreen:fullscreen;
+Switch2:value -> SelectInput2:which;
+Switch:value -> MakeList:1;
+Switch:value -> SelectInput:which;
+UnlockWindowAspectRatio:changedWindowDescription -> SelectInput2:trueOption;
+}
