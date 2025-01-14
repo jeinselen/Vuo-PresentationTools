@@ -1,0 +1,25 @@
+/**
+ * @file
+ * @brief Cache Location
+ *
+ * @author [iaian7](https://vuo.org/user/127)
+ * @createdInVuoVersion 2.4.5
+ * @lastSavedInVuoVersion 2.4.5
+ * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
+ * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
+ */
+
+digraph G
+{
+AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="825,825" _includeEmptyParts="true"];
+GetFileURLValues3 [type="vuo.url.get.file" version="1.0.0" label="Get File URL Values|<refresh>refresh\l|<url>url\l|<path>path\r|<folder>folder\r|<fileName>fileName\r|<extension>extension\r" pos="540,810"];
+MakeList2 [type="vuo.list.make.4.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<4>4\l|<list>list\r" pos="766,836" _2="\"cache\\/\"" _4="\".jpg\""];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<URL>URL\r" _URL_type="VuoText"];
+PublishedOutputs [type="vuo.out" label="PublishedOutputs|<CompositeText>CompositeText\l" _CompositeText_type="VuoText"];
+
+AppendTexts:compositeText -> PublishedOutputs:CompositeText;
+GetFileURLValues3:fileName -> MakeList2:3;
+GetFileURLValues3:folder -> MakeList2:1;
+MakeList2:list -> AppendTexts:texts;
+PublishedInputs:URL -> GetFileURLValues3:url;
+}
