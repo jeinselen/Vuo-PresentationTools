@@ -11,51 +11,25 @@
 
 digraph G
 {
-AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1035" _includeEmptyParts="true"];
-AppendTexts2 [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1185" _includeEmptyParts="true"];
 ConvertTextToInteger [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1005"];
-ConvertTextToInteger2 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1155"];
 ConvertTextToInteger3 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1245,1095"];
-ConvertTextToInteger4 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1245,1245"];
 FilterNote2 [type="vuo.midi.filter.note" version="2.0.0" label="Filter Note|<refresh>refresh\l|<note>note\l|<channel>channel\l|<noteNumber>noteNumber\l|<velocity>velocity\r" pos="1200,990"];
-FilterNote3 [type="vuo.midi.filter.note" version="2.0.0" label="Filter Note|<refresh>refresh\l|<note>note\l|<channel>channel\l|<noteNumber>noteNumber\l|<velocity>velocity\r" pos="1200,1140"];
 FindTableRow [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1005" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
-FindTableRow2 [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1155" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
-GetItemFromList2 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1230" _which="3"];
-GetItemFromList3 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1155" _which="2"];
-GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1005" _which="2"];
-GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1080" _which="3"];
+GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1005" _which="1"];
+GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1080" _which="2"];
 Increased [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,990"];
-Increased2 [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,1140"];
-MakeList [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1046" _2="\"1\""];
-MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1196" _2="\"2\""];
 PublishedInputs [type="vuo.in" label="PublishedInputs|<Note>Note\r|<Filter>Filter\r|<Value>Value\r" _Note_type="VuoMidiNote" _Filter_type="VuoTable" _Value_type="VuoText" _Value="\"start\""];
 PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Event>Event\l" _Event_type="event"];
 
-AppendTexts2:compositeText -> FindTableRow2:value;
-AppendTexts:compositeText -> FindTableRow:value;
-ConvertTextToInteger2:integer -> FilterNote3:channel;
 ConvertTextToInteger3:integer -> FilterNote2:noteNumber;
-ConvertTextToInteger4:integer -> FilterNote3:noteNumber;
 ConvertTextToInteger:integer -> FilterNote2:channel;
 FilterNote2:velocity -> Increased:value;
-FilterNote3:velocity -> Increased2:value;
-FindTableRow2:foundRowValues -> GetItemFromList2:list;
-FindTableRow2:foundRowValues -> GetItemFromList3:list;
 FindTableRow:foundRowValues -> GetItemFromList6:list;
 FindTableRow:foundRowValues -> GetItemFromList7:list;
-GetItemFromList2:item -> ConvertTextToInteger4:text;
-GetItemFromList3:item -> ConvertTextToInteger2:text;
 GetItemFromList6:item -> ConvertTextToInteger:text;
 GetItemFromList7:item -> ConvertTextToInteger3:text;
-Increased2:increased -> PublishedOutputs:Event;
 Increased:increased -> PublishedOutputs:Event;
-MakeList2:list -> AppendTexts2:texts;
-MakeList:list -> AppendTexts:texts;
-PublishedInputs:Filter -> FindTableRow2:table;
 PublishedInputs:Filter -> FindTableRow:table;
 PublishedInputs:Note -> FilterNote2:note;
-PublishedInputs:Note -> FilterNote3:note;
-PublishedInputs:Value -> MakeList2:1;
-PublishedInputs:Value -> MakeList:1;
+PublishedInputs:Value -> FindTableRow:value;
 }

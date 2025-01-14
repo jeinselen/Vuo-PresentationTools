@@ -11,7 +11,7 @@
 
 digraph G
 {
-AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1035" _includeEmptyParts="true"];
+AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1035" _separator="\"\"" _includeEmptyParts="true"];
 AppendTexts2 [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="510,1185" _includeEmptyParts="true"];
 ConvertTextToInteger5 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1020"];
 ConvertTextToInteger6 [type="vuo.type.text.integer" version="1.0.1" label="Convert Text to Integer|<refresh>refresh\l|<text>text\l|<integer>integer\r" pos="1290,1035"];
@@ -21,10 +21,10 @@ FilterController [type="vuo.midi.filter.controller" version="2.0.0" label="Filte
 FilterController2 [type="vuo.midi.filter.controller" version="2.0.0" label="Filter Controller|<refresh>refresh\l|<controller>controller\l|<channel>channel\l|<controllerNumber>controllerNumber\l|<value>value\r" pos="1200,1140"];
 FindTableRow [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1005" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
 FindTableRow2 [type="vuo.table.find.VuoInteger" version="1.0.0" label="Find Table Row|<refresh>refresh\l|<table>table\l|<column>column\l|<value>value\l|<valueComparison>valueComparison\l|<includeHeader>includeHeader\l|<foundRowValues>foundRowValues\r" pos="765,1155" _column="1" _valueComparison="\{\"type\":\"equals\",\"isCaseSensitive\":false\}" _includeHeader="false"];
-GetItemFromList2 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1230" _which="3"];
-GetItemFromList3 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1155" _which="2"];
-GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1005" _which="2"];
-GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1080" _which="3"];
+GetItemFromList2 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1230" _which="2"];
+GetItemFromList3 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1155" _which="1"];
+GetItemFromList6 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1005" _which="1"];
+GetItemFromList7 [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item from List|<refresh>refresh\l|<list>list\l|<which>which\l|<item>item\r" pos="930,1080" _which="2"];
 Increased [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,990"];
 Increased2 [type="vuo.event.increased2.VuoInteger" version="2.0.0" label="Increased|<refresh>refresh\l|<value>value\l|<increased>increased\r" pos="1380,1140"];
 MakeList [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="451,1046" _2="\"1\""];
