@@ -14,7 +14,7 @@ digraph G
 AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="675,1005" _includeEmptyParts="true"];
 FetchTable [type="vuo.table.fetch" version="1.1.0" label="Fetch Table|<refresh>refresh\l|<url>url\l|<format>format\l|<table>table\r" pos="960,1140" _format="\"csv\""];
 FileExists [type="vuo.file.exists" version="1.0.0" label="File Exists|<refresh>refresh\l|<url>url\l|<exists>exists\r" pos="960,1005"];
-MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="616,1016" _2="\"config.csv\""];
+MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="616,1016" _2="\"Config.csv\""];
 MakeTableFromText [type="vuo.table.make.text" version="1.1.0" label="Make Table from Text|<refresh>refresh\l|<text>text\l|<format>format\l|<table>table\r" pos="900,1065" _format="\"csv\""];
 SelectInput [type="vuo.select.in.boolean.VuoTable" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1095,1050"];
 ShareValue [type="vuo.data.share.VuoText" version="1.0.0" label="URL|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="825,1005"];
