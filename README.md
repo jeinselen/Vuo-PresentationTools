@@ -102,7 +102,6 @@ Creates a presentation streaming console from a directory of media files with mo
   - Supported MIDI actions (must include either "1" or "2" at the end, only exact matches are found):
     - `prev`
     - `next`
-    - `next`
     - `stop` (pauses current video)
     - `reset` (reloads directory and resets presentation to the first media item)
 - Media (video/image and audio outputs) is streamed to a public NDI source named "PresiPilot"
