@@ -1,16 +1,15 @@
 /**
  * @file
- * @brief Get Previews
- * Generates cache folder (if it does not already exist)
- * Generates thumbnails in cache location (if they do not already exist)
- * Gets thumbnails from cache
- * Returns a list of layers
+ * @brief Get Frames
+ * Generates Cache-Frames folder (if it does not already exist)
+ * Generates frames in cache location (if they do not already exist)
+ * Returns nothing (intended only for batch generating frames with a spun-off event)
  *
  * @author [iaian7](https://vuo.org/user/127)
  * @version 1.0
  * @createdInVuoVersion 2.4.5
  * @lastSavedInVuoVersion 2.4.5
- * @keywords get, generate, prevew, thumbnail, cache, image, video
+ * @keywords generate, cache, frames, frame, image, video
  * @copyright Copyright © 2025 [iaian7](https://vuo.org/user/127)
  * @see This is a Vuo Composition source code file.  See https://vuo.org for further information.
  */
@@ -20,13 +19,9 @@ digraph G
 AppendTexts [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="720,660" fillcolor="tangerine" _includeEmptyParts="true"];
 AppendTexts2 [type="vuo.text.append" version="1.2.0" label="Append Texts|<refresh>refresh\l|<texts>texts\l|<separator>separator\l|<includeEmptyParts>includeEmptyParts\l|<compositeText>compositeText\r" pos="945,120" fillcolor="tangerine" _includeEmptyParts="false"];
 BlockEmptyList [type="vuo.event.emptyList.VuoText" version="1.0.0" label="Block Empty List|<refresh>refresh\l|<list>list\l|<nonEmptyList>nonEmptyList\r" pos="300,255" fillcolor="magenta"];
-Calculate [type="vuo.math.calculate" version="1.0.0" label="Calculate|<refresh>refresh\l|<expression>expression\l|<values>values\l|<result>result\r" pos="795,300" fillcolor="orange" _expression="\{\"expressions\":[\"min(0.14222222, Width \\/ (Count) - Spacing)\"],\"inputVariables\":[\"Count\",\"Spacing\",\"Width\"],\"outputVariables\":[\"result\"]\}"];
 ConvertFrameToImage3 [type="vuo.type.videoframe.image" version="1.0.0" label="Convert Frame to Image|<refresh>refresh\l|<frame>frame\l|<image>image\r" pos="2265,630"];
-ConvertIntegerToRealNumber [type="vuo.type.integer.real" version="1.0.0" label="Convert Integer to Real Number|<refresh>refresh\l|<integer>integer\l|<real>real\r" pos="780,495"];
-CountItemsInList [type="vuo.list.count.VuoText" version="1.0.0" label="Count Items in List|<refresh>refresh\l|<list>list\l|<itemCount>itemCount\r" pos="465,315" fillcolor="orange"];
 CreateFolder [type="vuo.file.create.folder" version="1.0.0" label="Create Folder|<refresh>refresh\l|<createAtUrl>createAtUrl\l|<done>done\r" pos="1260,210" fillcolor="tangerine"];
 DecodeMovieImage2 [type="vuo.video.decodeImage" version="2.2.1" label="Decode Movie Image|<refresh>refresh\l|<url>url\l|<frameTime>frameTime\l|<loop>loop\l|<videoFrame>videoFrame\r" pos="1665,510" fillcolor="cyan" _loop="\"none\""];
-FetchImage3 [type="vuo.image.fetch" version="2.1.0" label="Fetch Image|<refresh>refresh\l|<url>url\l|<image>image\r" pos="2520,480" fillcolor="magenta"];
 FetchImage4 [type="vuo.image.fetch" version="2.1.0" label="Fetch Image|<refresh>refresh\l|<url>url\l|<image>image\r" pos="1725,600" fillcolor="violet"];
 FileExists [type="vuo.file.exists" version="1.0.0" label="File Exists|<refresh>refresh\l|<url>url\l|<exists>exists\r" pos="885,435" fillcolor="tangerine"];
 FileExists2 [type="vuo.file.exists" version="1.0.0" label="File Exists|<refresh>refresh\l|<url>url\l|<exists>exists\r" pos="1095,105" fillcolor="tangerine"];
@@ -36,19 +31,13 @@ GetItemFromList [type="vuo.list.get.VuoText" version="1.0.1" label="Get Item fro
 GetMovieInfo2 [type="vuo.video.info" version="2.0.2" label="Get Movie Info|<refresh>refresh\l|<url>url\l|<duration>duration\r" pos="1530,525" fillcolor="cyan"];
 HoldList3 [type="vuo.data.hold.list2.VuoText" version="2.0.0" label="Hold List|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="1425,240" fillcolor="magenta"];
 HoldURL2 [type="vuo.data.hold2.VuoText" version="3.0.0" label="Hold URL|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="1410,600" fillcolor="violet"];
-HoldValue [type="vuo.data.hold2.VuoText" version="3.0.0" label="Hold Value|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="2400,480" fillcolor="tangerine"];
 HoldValue2 [type="vuo.data.hold2.VuoText" version="3.0.0" label="Hold Value|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="1140,210" fillcolor="tangerine"];
 HoldValue3 [type="vuo.data.hold2.VuoText" version="3.0.0" label="Hold URL|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="1410,510" fillcolor="cyan"];
-HoldValue4 [type="vuo.data.hold2.VuoReal" version="3.0.0" label="Width|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="2520,540" fillcolor="orange"];
-MakeDictionary [type="vuo.dictionary.make.VuoText.VuoReal" version="1.0.0" label="Make Dictionary|<refresh>refresh\l|<keys>keys\l|<values>values\l|<dictionary>dictionary\r" pos="570,345"];
-MakeImageLayer [type="vuo.layer.make.scaled" version="3.1.0" label="Make Image Layer|<refresh>refresh\l|<image>image\l|<anchor>anchor\l|<center>center\l|<rotation>rotation\l|<width>width\l|<fixed>fixed\l|<opacity>opacity\l|<layer>layer\r" pos="2685,480" fillcolor="magenta" _anchor="\{\"horizontalAlignment\":\"center\",\"verticalAlignment\":\"center\"\}" _center="\{\"x\":0.0,\"y\":0.0\}" _rotation="0.0" _fixed="\"horizontal\"" _opacity="1.0"];
-MakeList10 [type="vuo.list.make.3.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<list>list\r" pos="570,345" _1="\"Count\"" _2="\"Spacing\"" _3="\"Width\""];
-MakeList2 [type="vuo.list.make.4.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<4>4\l|<list>list\r" pos="661,671" fillcolor="tangerine" _2="\"Cache-Previews\\/\"" _4="\".png\""];
-MakeList4 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="882,131" fillcolor="tangerine" _2="\"Cache-Previews\\/\""];
-MakeList5 [type="vuo.list.make.3.VuoReal" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<list>list\r" pos="734,326" fillcolor="orange"];
+MakeList2 [type="vuo.list.make.4.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<3>3\l|<4>4\l|<list>list\r" pos="661,671" fillcolor="tangerine" _2="\"Cache-Frames\\/\"" _4="\".png\""];
+MakeList4 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refresh>refresh\l|<1>1\l|<2>2\l|<list>list\r" pos="882,131" fillcolor="tangerine" _2="\"Cache-Frames\\/\""];
 MediaType [type="presiParts.mediaType" version="" label="Media Type|<refresh>refresh\l|<URL>URL\l|<Image>Image\r|<Movie>Movie\r" pos="1035,510" fillcolor="blue"];
-ProcessList [type="vuo.list.process.VuoText.VuoLayer" version="1.0.1" label="Process List|<refresh>refresh\l|<fire>fire\l|<processedItem>processedItem\l|<processedList>processedList\r|<processItem>processItem\r" pos="1560,240" fillcolor="magenta" _processedList_eventThrottling="enqueue" _processItem_eventThrottling="enqueue"];
-ResizeImage [type="vuo.image.resize" version="1.1.3" label="Resize Image|<refresh>refresh\l|<image>image\l|<sizingMode>sizingMode\l|<width>width\l|<height>height\l|<resizedImage>resizedImage\r" pos="2070,510" fillcolor="blue" _sizingMode="\"fill\"" _width="160" _height="90"];
+ProcessList [type="vuo.list.process.VuoText.VuoGenericType2" version="1.0.1" label="Process List|<refresh>refresh\l|<fire>fire\l|<processedItem>processedItem\l|<processedList>processedList\r|<processItem>processItem\r" pos="1560,240" fillcolor="magenta" _processedList_eventThrottling="enqueue" _processItem_eventThrottling="enqueue"];
+ResizeImage [type="vuo.image.resize" version="1.1.3" label="Resize Image|<refresh>refresh\l|<image>image\l|<sizingMode>sizingMode\l|<width>width\l|<height>height\l|<resizedImage>resizedImage\r" pos="2070,510" fillcolor="blue" _sizingMode="\"fill\"" _width="1920" _height="1080"];
 SaveImage [type="vuo.image.save2" version="2.0.0" label="Save Image|<refresh>refresh\l|<url>url\l|<saveImage>saveImage\l|<ifExists>ifExists\l|<format>format\l|<done>done\r" pos="2265,495" fillcolor="tangerine" _ifExists="1" _format="\"PNG\""];
 SelectEventInput5 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1230,510" fillcolor="cyan"];
 SelectEventInput6 [type="vuo.select.in.boolean.event2" version="3.0.0" label="Select Event Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1230,600" fillcolor="violet"];
@@ -58,30 +47,17 @@ SelectLatest [type="vuo.select.latest.2.VuoImage" version="1.0.0" label="Select 
 ShareValue [type="vuo.data.share.VuoText" version="1.0.0" label="URL|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="300,510" fillcolor="magenta"];
 ShareValue2 [type="vuo.data.share.VuoText" version="1.0.0" label="Cache Location|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="2070,660" fillcolor="tangerine"];
 URL2 [type="vuo.data.share.VuoText" version="1.0.0" label="Source URL|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="1065,585" fillcolor="magenta"];
-Width2 [type="vuo.data.hold2.VuoReal" version="3.0.0" label="Width|<refresh>refresh\l|<update>update\l|<value>value\l|<heldValue>heldValue\r" pos="1860,285" fillcolor="orange"];
-PublishedInputs [type="vuo.in" label="PublishedInputs|<Files>Files\r|<Width>Width\r|<Spacing>Spacing\r" _Files_type="VuoList_VuoText" _Width_type="VuoReal" _Width="1.8999999999999999" _Spacing_type="VuoReal" _Spacing="0.01"];
-PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Layers>Layers\l|<LayerWidth>LayerWidth\l" _Layers_type="VuoList_VuoLayer" _LayerWidth_type="VuoReal"];
-
-Comment [type="vuo.comment" label="\"maximum height of 0.08 \\/ (9\\/16) = 0.14222222 maximum width\"" pos="480,345" width="391" height="30"];
-Comment2 [type="vuo.comment" label="\"0.1 : 0.05625\"" pos="2700,600" width="91" height="33"];
-Comment3 [type="vuo.comment" label="\"0.14222222 : 0.8\"" pos="2700,645" width="106" height="30"];
+PublishedInputs [type="vuo.in" label="PublishedInputs|<Files>Files\r" _Files_type="VuoList_VuoText"];
 
 AppendTexts2:compositeText -> FileExists2:url;
 AppendTexts2:compositeText -> HoldValue2:value;
 AppendTexts:compositeText -> FileExists:url;
 AppendTexts:compositeText -> ShareValue2:value;
-BlockEmptyList:nonEmptyList -> CountItemsInList:list;
 BlockEmptyList:nonEmptyList -> GetItemFromList:list;
 BlockEmptyList:nonEmptyList -> HoldList3:value;
-Calculate:result -> HoldValue4:value;
-Calculate:result -> Width2:value;
 ConvertFrameToImage3:image -> SelectLatest:option1;
-ConvertIntegerToRealNumber:real -> MakeList5:1;
-CountItemsInList:itemCount -> ConvertIntegerToRealNumber:integer;
 CreateFolder:done -> HoldList3:update;
 DecodeMovieImage2:videoFrame -> ConvertFrameToImage3:frame;
-FetchImage3:image -> HoldValue4:update;
-FetchImage3:image -> MakeImageLayer:image;
 FetchImage4:image -> SelectLatest:option2;
 FileExists2:exists -> SelectEventOutput4:which;
 FileExists:exists -> SelectEventOutput:which;
@@ -95,38 +71,26 @@ HoldURL2:heldValue -> FetchImage4:url;
 HoldValue2:heldValue -> CreateFolder:createAtUrl;
 HoldValue3:heldValue -> DecodeMovieImage2:url;
 HoldValue3:heldValue -> GetMovieInfo2:url;
-HoldValue4:heldValue -> MakeImageLayer:width;
-HoldValue:heldValue -> FetchImage3:url;
-MakeDictionary:dictionary -> Calculate:values;
-MakeImageLayer:layer -> ProcessList:processedItem;
-MakeList10:list -> MakeDictionary:keys;
 MakeList2:list -> AppendTexts:texts;
 MakeList4:list -> AppendTexts2:texts;
-MakeList5:list -> MakeDictionary:values;
 MediaType:Image -> SelectEventInput5:which;
 MediaType:Image -> SelectEventInput6:which;
 ProcessList:processItem -> ShareValue:value;
-ProcessList:processedList -> PublishedOutputs:Layers;
-ProcessList:processedList -> Width2:update;
 PublishedInputs:Files -> BlockEmptyList:list;
-PublishedInputs:Spacing -> MakeList5:2;
-PublishedInputs:Width -> MakeList5:3;
 ResizeImage:resizedImage -> SaveImage:saveImage;
-SaveImage:done -> HoldValue:update;
+SaveImage:done -> ProcessList:processedItem;
 SelectEventInput5:out -> HoldValue3:update;
 SelectEventInput6:out -> HoldURL2:update;
 SelectEventOutput4:falseOption -> HoldValue2:update;
 SelectEventOutput4:trueOption -> HoldList3:update;
 SelectEventOutput:falseOption -> SelectEventInput5:falseOption;
 SelectEventOutput:falseOption -> SelectEventInput6:trueOption;
-SelectEventOutput:trueOption -> HoldValue:update;
+SelectEventOutput:trueOption -> ProcessList:processedItem;
 SelectLatest:latest -> ResizeImage:image;
-ShareValue2:sameValue -> HoldValue:value;
 ShareValue2:sameValue -> SaveImage:url;
 ShareValue:sameValue -> GetFileURLValues3:url;
 ShareValue:sameValue -> MediaType:URL;
 ShareValue:sameValue -> URL2:value;
 URL2:sameValue -> HoldURL2:value;
 URL2:sameValue -> HoldValue3:value;
-Width2:heldValue -> PublishedOutputs:LayerWidth;
 }
