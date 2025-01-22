@@ -18,7 +18,7 @@ MakeList2 [type="vuo.list.make.2.VuoText" version="2.0.0" label="Make List|<refr
 MakeTableFromText [type="vuo.table.make.text" version="1.1.0" label="Make Table from Text|<refresh>refresh\l|<text>text\l|<format>format\l|<table>table\r" pos="900,1065" _format="\"csv\""];
 SelectInput [type="vuo.select.in.boolean.VuoTable" version="2.0.0" label="Select Input|<refresh>refresh\l|<which>which\l|<falseOption>falseOption\l|<trueOption>trueOption\l|<out>out\r" pos="1095,1050"];
 ShareValue [type="vuo.data.share.VuoText" version="1.0.0" label="URL|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="825,1005"];
-ShareValue2 [type="vuo.data.share.VuoText" version="1.0.0" label="Default Config|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="690,1095" _value="\"Setting=Value\\nplayprevious=true\\nincludeimages=true\\nincludemovies=true\\nAction,Channel,Controller\\nprev1,1,25\\nprev2,1,61\\nnext1,1,26\\nnext2,1,62\\nstart1,1,27\\nstart2,1,52\\nstop1,1,28\\nstop2,1,53\\nreset1,1,29\\nreset2,1,54\\nvolume1,1,30\\nvolume2,1,31\\nvolume3,1,32\\nvolume4,1,33\\nSoundboard,Channel,Note\\npatch1,10,36\\npatch2,10,37\\npatch3,10,38\\npatch4,10,39\\npatch5,10,40\\npatch6,10,41\\npatch7,10,42\\npatch8,10,43\\npatch9,10,44\\npatch10,10,45\\npatch11,10,46\\npatch12,10,47\\npatch13,10,48\\npatch14,10,49\\npatch15,10,50\\npatch16,10,51\""];
+ShareValue2 [type="vuo.data.share.VuoText" version="1.0.0" label="Default Config|<refresh>refresh\l|<value>value\l|<sameValue>sameValue\r" pos="690,1095" _value="\"Settings\\nplayprevious=true\\nincludeimages=true\\nincludemovies=true\\nAction,Channel,Controller\\nprev1,1,25\\nprev2,1,61\\nnext1,1,26\\nnext2,1,62\\nmute1,1,27\\nmute2,1,52\\nstop1,1,28\\nstop2,1,53\\nreset1,1,29\\nreset2,1,54\\nvolume1,1,30\\nvolume2,1,31\\nvolume3,1,32\\nvolume4,1,33\\nSoundboard,Channel,Note\\npatch1,10,36\\npatch2,10,37\\npatch3,10,38\\npatch4,10,39\\npatch5,10,40\\npatch6,10,41\\npatch7,10,42\\npatch8,10,43\\npatch9,10,44\\npatch10,10,45\\npatch11,10,46\\npatch12,10,47\\npatch13,10,48\\npatch14,10,49\\npatch15,10,50\\npatch16,10,51\""];
 PublishedInputs [type="vuo.in" label="PublishedInputs|<Directory>Directory\r|<Load>Load\r" _Directory_type="VuoText" _Load_type="event"];
 PublishedOutputs [type="vuo.out" label="PublishedOutputs|<Config>Config\l" _Config_type="VuoTable"];
 
@@ -29,6 +29,7 @@ MakeList2:list -> AppendTexts:texts;
 MakeTableFromText:table -> SelectInput:falseOption;
 PublishedInputs:Directory -> MakeList2:1;
 PublishedInputs:Load -> FetchTable:url;
+PublishedInputs:Load -> ShareValue2:value;
 SelectInput:out -> PublishedOutputs:Config;
 ShareValue2:sameValue -> MakeTableFromText:text;
 ShareValue:sameValue -> FetchTable:url;
