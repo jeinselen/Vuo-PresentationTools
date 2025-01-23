@@ -264,6 +264,7 @@ PublishedInputs:Note -> BlendColors2:background [event=true];
 PublishedInputs:Note -> BlendColors:background [event=true];
 PublishedInputs:Note -> FilterMidiNote:Note;
 PublishedInputs:Offset -> ShareValue5:value;
+PublishedInputs:Stop -> SendLiveAudio3:device;
 PublishedInputs:Stop -> StopTrigger2:event;
 PublishedInputs:Time -> ShareValue:value;
 PublishedInputs:Trigger -> ShareEvent:event;
